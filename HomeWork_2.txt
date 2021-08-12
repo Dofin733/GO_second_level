@@ -1,0 +1,46 @@
+﻿// код написанный в WINDOWS без проблем запустился в LINUX UBUNTU через виртуальную машину
+
+dofin@dofin:~/dir1$ go run main.go
+1+2 = 3
+1+2+3 = 6
+
+//значения переменных в WINDOWS
+
+PS D:\Hobby\golang\go THE SECOND\HomeWork_2> go env GOOS GOARCH
+windows
+amd64
+
+//значения  переменных в LINUX
+dofin@dofin:~/dir1$ go env GOOS GOARCH
+linux
+amd64
+
+// godoc в LINUX пришлось ставить через терминал, 
+
+dofin@dofin:~/dir1$ godoc -http=:8080
+Команда «godoc» не найдена, но может быть установлена с помощью:
+sudo apt install golang-golang-x-tools
+dofin@dofin:~/dir1$ sudo apt install golang-golang-x-tools
+sudo: эффективный uid не равен 0, возможно, /usr/bin/sudo находится в файловой системе, смонтированной с битом «nosuid» или в файловой системе NFS без прав суперпользователя?
+
+dofin@dofin:~/dir1$ godoc -http=:8080
+using GOPATH mode
+// в браузере документация прогрузилась
+
+
+//в WINDOWS установка такая(установил и GODOC и GOLINT)
+PS D:\Hobby\golang\go THE SECOND\HomeWork_2> go get golang.org/x/tools/cmd/godoc
+go: downloading golang.org/x/tools v0.1.5
+go: downloading golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4
+go: downloading github.com/yuin/goldmark v1.3.5
+
+PS D:\Hobby\golang\go THE SECOND\HomeWork_2> go get golang.org/x/lint/golint
+go: downloading golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
+go: downloading golang.org/x/tools v0.0.0-20200130002326-2f3ba24bd6e7
+
+PS D:\Hobby\golang\go THE SECOND\HomeWork_2> godoc -http=:8080
+using module mode; GOMOD=NUL
+// в браузере документация прогрузилась
+
+
+
