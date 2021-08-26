@@ -1,0 +1,29 @@
+проверка кода из прошлого домашнего задания на гонку
+
+PS D:\Hobby\golang\go THE SECOND\HomeWork_5> go run -race main.go
+==================
+WARNING: DATA RACE
+Write at 0x00c000102070 by main goroutine:
+  runtime.closechan()
+      C:/Program Files/Go/src/runtime/chan.go:355 +0x0
+  main.main()
+      D:/Hobby/golang/go THE SECOND/HomeWork_5/main.go:27 +0x144
+
+Previous read at 0x00c000102070 by goroutine 44:
+  runtime.chansend()
+      C:/Program Files/Go/src/runtime/chan.go:158 +0x0
+  main.main.func1()
+      D:/Hobby/golang/go THE SECOND/HomeWork_5/main.go:23 +0xcc
+
+Goroutine 44 (finished) created at:
+  main.main()
+      D:/Hobby/golang/go THE SECOND/HomeWork_5/main.go:18 +0x10d
+==================
+2000
+2000
+Found 1 data race(s)
+exit status 66
+PS D:\Hobby\golang\go THE SECOND\HomeWork_5>
+
+
+
